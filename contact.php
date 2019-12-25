@@ -1,5 +1,18 @@
+<?php
+
+if(isset($_POST['submit']))
+{
+    $to_email = "racheljose21@gmail.com";
+    $subject = "Contact Form";
+    $body = "Name:".$_POST['first'] ." " . $_POST['last']."
+    Email:".$_POST['email']."
+    Message:".$_POST['message'];
+    $headers = "From: sender\'s email";
+    mail($to_email,$subject,$body,$headers);
+}
 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,18 +33,12 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/jumpanime.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css">
-    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/motion-ui.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/motion-ui.js"></script>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -62,7 +69,7 @@
             <div class="col-lg-4">
               <nav class="site-navigation text-right ml-auto " role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li class="active"><a href="about.html" class="nav-link">About</a></li>
+                  <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="services.html" class="nav-link">Services</a></li>
                 </ul>
               </nav>
@@ -79,7 +86,7 @@
               <nav class="site-navigation text-left mr-auto " role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="blog.html" class="nav-link">Team</a></li>
-                  <li><a href="contact.php" class="nav-link">Contact</a></li>
+                  <li class="active"><a href="contact.php" class="nav-link">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -94,20 +101,14 @@
 
 
     <div class="ftco-blocks-cover-1">
-
-
-        <div class="ftco-cover-1" style="background-attachment: fixed; background-image: url('images/about.jpeg');">
+        <div class="ftco-cover-1" style="background-attachment: fixed; background-image: url('images/contactus.jpeg');">
             <div class="container">
               <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 text-center">
                    <div class="box-92819">
-       
-        
-            <h1 class="text-uppercase text-black mb-3">Prakash Saboo & CO</h1>
-            <p class="mb-0 text-black">Chartered Accountancy firm </p>
-            </div>
-
-                  
+                    <h1 class="text-uppercase text-black mb-3" style="font-weight: bold;">Contact Us</h1>
+                    <div class="underline"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,88 +116,70 @@
       </div>
 
     
-    <div class="site-section" style="
-    background-image: url('images/ourcompany.jpeg');
-    background-attachment: fixed;
-    width: 80%;
-    margin: auto;
-">
-      <div class="container">
-        <div class="row align-items-stretch">
-          <div class="col-lg-8" style="margin: auto;">
-            <div class="h-100 bg-white box-29291">
-              <h2 class="heading-39291" style="margin-bottom: 5px;">Welcome To <br> Our Company</h2>
-              <div class="underline" style="margin-bottom: 20px;"></div>
-              <p>Prakash Saboo & CO. is a Chartered Accountancy firm established in the year 1996. The firm has its head office based in Mumbai with a branch in Jaipur.</p>
-              <p>The firm is backed by a strong team of professionals with expertise in handling assignments of medium to very large organizations. The firm has undertaken statutory & internal audits  of various government & insurance companies, private & public limited companies, NGO's and other social organizations</p>
-
-              <p class="mt-5">
-                <span class="d-block font-weight-bold text-black">Mr. Prakash Saboo</span>
-                <span class="d-block font-weight-bold text-muted">Founder, CEO</span>
-                
-                
-              </p>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
     <div class="site-section">
       <div class="container">
+        
         <div class="row">
-            <div class="col-lg-5">
-            </div>
-            <div class="col-lg-6">
-                <div class="scroll-animations animated" style="padding: 0px 10px;">
-                    <div class="animated">
-                      
-                      <h2 class="heading-39291">Company Story</h2>
-                      
-                      </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col">
-                      <div class="underline1" style="padding: 0px 10px;"></div>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    
-                      <div class="col">
-                        <div class="underline2"></div>
-                      </div>
-                     
-                  </div>
-                  <br>
-            </div>
-            
-        </div>
-        <div class="row">
-          
-            
-            
+          <div class="col-lg-7 mb-5" >
+            <form action="#" method="post">
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <input type="text" class="form-control" placeholder="First name" name="first">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last name" name="last">
+                </div>
+              </div>
 
-          <div class="col-lg-5" style="padding-bottom: 10px;">
-            <img src="images/companystory.jpeg" alt="Image" class="img-fluid shad">
-          </div>
-          <div class="col-lg-6">
-              
-                <p class="mb-5">Prakash Saboo & CO. is a Chartered Accountancy firm established in the year 1996. The firm has its head office based in Mumbai with a branch in Jaipur. In the year 2019 after merger of M/s AVK Sharma & Company, Our company’s strength is increased in another era of business.</p>
-            <p>The firm is backed by a strong team of professionals with expertise in handling assignments of medium to very large organizations. The firm has undertaken statutory & internal audits  of various government & insurance companies, private & public limited companies, NGO's and other social organizations. The firm has experience in providing wide range of services to the clients in diversified areas such as industrial manufacturing, electronics, publications, garments, real-estate & construction, medical services, education, agro based industries, tourism, information technology and telecommunications. The firm has specialized experience in corporate & project finance, Revival, Restructuring & turn around resolution & Business advisory consultancy.</p>
-          
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Email address" name="email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea name="message" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 mr-auto">
+                  <input type="submit" name="submit" class="btn btn-block btn-primary text-white py-3 px-5 rounded-0" value="Send Message">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 mr-auto">
+                <h4>Want to <a href="booking.php">BOOK US?</a></h4>
+                  
             </div>
+              </div>
+              </form>
+          </div>
+          <div class="col-lg-5 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="heading-39291">Contact Info</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3">
+                  <span class="d-block text-black small text-uppercase font-weight-bold">Address:</span>
+                  <span> <span class="font-weight-bold"> Head Office: </span> 205, 2nd Floor, V-Mall, Near Saidham Temple, W.E. Highway, Kandivali (East) Mumbai–400101.</span></li>
+                  <span> <span class="font-weight-bold"> Branch Office: </span> FF-27, Cross Road Mall, Central Spine, Vidhyadhar Nagar, Jaipur – 302039.</span></li>
+                  <br><br>
+                  <li class="d-block mb-3">
+                    <span class="d-block text-black small text-uppercase font-weight-bold">Phone:</span>
+                    <span class="font-weight-bold"> Head Office: </span><span>9820513340</span></li>
+                    <span class="font-weight-bold"> Branch Office: </span> <span>8233770144/9783888312</span></li>
+                  <br>
+                  <li class="d-block mb-3"><span class="d-block text-black small text-uppercase font-weight-bold">Email:</span><span>prakashsaboo@yahoo.com</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="animated fadeInLeft">
-      <hr>
-   </div>
 
-
-  
     
+    
+
     
     <footer class="site-footer">
       <div class="container">
@@ -235,6 +218,7 @@
         
       </div>
     </footer>
+
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -244,16 +228,13 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/aos.js"></script>
-    <script src="js/jumpanime.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/motion-ui.js"></script>
 
+    <script src="js/main.js"></script>
+
+    
   </body>
 
 </html>
